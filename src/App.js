@@ -1,8 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {connect} from 'react-redux';
 
 class App extends React.Component {
+
+  componentDidMount(){
+
+  }
   render () {
     return (
       <div className="App">
@@ -17,4 +22,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default connect(null, {fetchEvents})(App); //connect allows access to store in index 
