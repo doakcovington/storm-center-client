@@ -25,7 +25,7 @@ class CreateEvent extends React.Component {
           <label>Event Description:</label>
           <input type='text' placeholder='Description' value={this.state.description} name='description' onChange={this.handleChange}/><br></br>
           <label>Event Date:</label>
-          <input type='date' name='date' value={this.state.date}/><br></br>
+          <input type='date' name='date' value={this.state.date} onChange={this.handleChange}/><br></br>
           <label>Event Location/Link:</label>
           <input type='text' placeholder='url...' value={this.state.location} name='location' onChange={this.handleChange}/><br></br>
           <label>Event Spaces:</label>
