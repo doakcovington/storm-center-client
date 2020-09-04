@@ -4,7 +4,7 @@ export function fetchEvents() { //creates action object contained events from ra
     .then(response => response.json())
     .then(events =>  dispatch({
       type: 'FETCH_EVENTS',
-      payload: events.data,
+      payload: events.data
     }))
   }
 }
