@@ -1,4 +1,6 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {addEvent} from '../actions/addEvent';
 
 class CreateEvent extends React.Component {
   state = {
@@ -16,10 +18,15 @@ class CreateEvent extends React.Component {
     })
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault()
+    this.props.addEvent(this.state)
+  }
+
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <label>Event Name:</label>
           <input type='text' placeholder='Name' value={this.state.name} name='name' onChange={this.handleChange}/><br></br>
           <label>Event Description:</label>
@@ -42,4 +49,4 @@ class CreateEvent extends React.Component {
   }
 }
 
-export default CreateEvent;
+export default connect(null, {addEvent})(CreateEvent);
