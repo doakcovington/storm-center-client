@@ -9,7 +9,7 @@ class CreateEvent extends React.Component {
     date: '',
     location: '',
     spaces: '',
-    tutor: '1' //sets tutor to first in select option
+    tutor_id: '1' //sets tutor to first in select option
   }
 
   handleChange = (event) => {
@@ -38,7 +38,7 @@ class CreateEvent extends React.Component {
           <label>Event Spaces:</label>
           <input type='number' placeholder='5' value={this.state.number} name='spaces' onChange={this.handleChange}/><br></br>
           <label>Event Tutor:</label>
-          <select id='tutor' name='tutor' value={this.state.tutor} onChange={this.handleChange}>
+          <select id='tutor_id' name='tutor_id' value={this.state.tutor_id} onChange={this.handleChange}>
             <option value='1'>Doak</option>
             <option value='2'>Heidi</option>
           </select><br></br>
