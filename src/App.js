@@ -1,20 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {connect} from 'react-redux';
+
+//containers
+import EventsContainer from './containers/EventsContainer'
 
 class App extends React.Component {
+
   render () {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            We Don't Go To Ravenholm
-          </p>
-        </header>
+        <EventsContainer />
       </div>
     );
   }
 }
 
-export default App;
+export default connect()(App); //connect allows access to store in index 

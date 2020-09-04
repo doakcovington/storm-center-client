@@ -6,11 +6,20 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
-import store from './store'
+import { compose, createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+
+//reducers
+import eventReducer from './reducers/eventReducer' //updates the value of store
+
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = createStore(eventReducer, composeEnhancer(applyMiddleware(thunk)))
+
 
 
 ReactDOM.render(
-  <Provider store={ store }>
+  <Provider store={store}>
     <App />
   </Provider>
   ,
