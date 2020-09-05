@@ -1,8 +1,9 @@
-import React from 'react'
-import Events from '../components/Events'
-import {connect} from 'react-redux'
+import React from 'react';
+import Events from '../components/Events';
+import {connect} from 'react-redux';
+import CreateEvent from '../components/CreateEvent';
 
-import {fetchEvents} from '../actions/fetchEvents'
+import {fetchEvents} from '../actions/fetchEvents';
 
 class EventsContainer extends React.Component {
 
@@ -13,6 +14,7 @@ class EventsContainer extends React.Component {
   render() {
     return (
       <div>
+        <CreateEvent />
         <Events events={this.props.events}/>
       </div>
     )
@@ -25,4 +27,4 @@ const mapStateToProps = state => { //state is from redux store
   }
 }
 
-export default connect(mapStateToProps, {fetchEvents})(EventsContainer);
+export default connect( mapStateToProps, {fetchEvents})(EventsContainer);
