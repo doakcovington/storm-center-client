@@ -26,7 +26,7 @@ class CreateEvent extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit.bind(this)}> //is .bind(this) needed?
           <label>Event Name:</label>
           <input type='text' placeholder='Name' value={this.state.name} name='name' onChange={this.handleChange}/><br></br>
           <label>Event Description:</label>
@@ -42,11 +42,11 @@ class CreateEvent extends React.Component {
             <option value='1'>Doak</option>
             <option value='2'>Heidi</option>
           </select><br></br>
-          <button>Submit</button>
+          <button type="button" onClick={this.handleSubmit}>Submit</button>
         </form>
       </div>
     )
   }
 }
 
-export default connect(null, {addEvent})(CreateEvent);
+export default connect(null, {addEvent})(CreateEvent)
