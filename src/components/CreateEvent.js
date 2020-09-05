@@ -26,7 +26,7 @@ class CreateEvent extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit.bind(this)}> //is .bind(this) needed?
+        <form onSubmit={this.handleSubmit.bind(this)}>
           <label>Event Name:</label>
           <input type='text' placeholder='Name' value={this.state.name} name='name' onChange={this.handleChange}/><br></br>
           <label>Event Description:</label>
