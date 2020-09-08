@@ -21,12 +21,20 @@ class CreateEvent extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault()
     this.props.addEvent(this.state)
+    this.setState({ //clears form input fields after submit
+      name: '',
+      description: '',
+      date: '',
+      location: '',
+      spaces: '',
+      tutor_id: '1' //sets tutor to first in select option
+    })
   }
 
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit.bind(this)}>
+        <form onSubmit={this.handleSubmit}>
           <label>Event Name:</label>
           <input type='text' placeholder='Name' value={this.state.name} name='name' onChange={this.handleChange}/><br></br>
           <label>Event Description:</label>
