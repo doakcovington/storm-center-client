@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import ShowEvent from './ShowEvent';
 
 const Events = (props) => {
   return (
