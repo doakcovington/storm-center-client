@@ -8,6 +8,7 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import { compose, createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+import {BrowserRouter as Router} from 'react-router-dom';
 
 //reducers
 import eventReducer from './reducers/eventReducer' //updates the value of store
@@ -20,7 +21,9 @@ const store = createStore(eventReducer, composeEnhancer(applyMiddleware(thunk)))
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </Provider>
   ,
   document.getElementById('root')

@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
+import Event from './Event';
 
 const Events = (props) => {
+  console.log(props)
   return (
     <div>
-     {props.events.map(event => <li key={event.id}>{event.attributes.name} - 
-     {event.attributes.description} - Spaces: {event.attributes.spaces} 
-     Tutor: {event.attributes.tutor.name}</li>)}
+     {props.events.map(event => <div key={event.id}><Event event={event}/> </div>)}
     </div>
   )
 }

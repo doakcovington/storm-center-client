@@ -15,12 +15,12 @@ class CreateEvent extends React.Component {
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value //sets the state for each key in state object [are used for keys with '.' in name]
-    })
+    });
   }
 
   handleSubmit = (event) => {
-    event.preventDefault()
-    this.props.addEvent(this.state)
+    event.preventDefault();
+    this.props.addEvent(this.state);
     this.setState({ //clears form input fields after submit
       name: '',
       description: '',
@@ -28,7 +28,7 @@ class CreateEvent extends React.Component {
       location: '',
       spaces: '',
       tutor_id: '1' //sets tutor to first in select option
-    })
+    });
   }
 
   render() {
@@ -53,8 +53,8 @@ class CreateEvent extends React.Component {
           <button type="button" onClick={this.handleSubmit}>Submit</button>
         </form>
       </div>
-    )
+    );
   }
 }
 
-export default connect(null, {addEvent})(CreateEvent)
+export default connect(null, {addEvent})(CreateEvent);

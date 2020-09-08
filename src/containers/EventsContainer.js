@@ -2,7 +2,7 @@ import React from 'react';
 import Events from '../components/Events';
 import {connect} from 'react-redux';
 import CreateEvent from '../components/CreateEvent';
-
+import {Route} from 'react-router-dom';
 import {fetchEvents} from '../actions/fetchEvents';
 
 class EventsContainer extends React.Component {
