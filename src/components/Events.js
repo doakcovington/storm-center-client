@@ -1,5 +1,5 @@
 import React from 'react';
-import ShowEvent from './ShowEvent';
+import Event from './Event';
 
 const Events = (props) => {
   return (

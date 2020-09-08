@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ShowEvent = (props) => {
+const Event = (props) => {
   return (
     <div>
      
@@ -8,4 +8,4 @@ const ShowEvent = (props) => {
   )
 }
 
-export default ShowEvent
+export default Event
