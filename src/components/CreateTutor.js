@@ -16,10 +16,21 @@ class CreateTutor extends React.Component {
     });
   }
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.addTutor(this.state);
+    this.setState({ //clears form input fields after submit
+      name: '',
+      speciality: '',
+      phonenumber: '',
+      email: '',
+    });
+  }
+
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <label>Name:</label>
           <input type='text' placeholder='Name' value={this.state.name} name='name' onChange={this.handleChange}/><br></br>
           <label>Speciality:</label>
@@ -28,6 +39,7 @@ class CreateTutor extends React.Component {
           <input type='text' placeholder='555-555-5555' value={this.state.phonenumber} name='phonenumber' onChange={this.handleChange}/><br></br>
           <label>Email:</label>
           <input type='text' placeholder='tutor@email.com' value={this.state.email} name='email' onChange={this.handleChange}/><br></br>
+          <button type="button" onClick={this.handleSubmit}>Submit</button>
         </form>
       </div>
     )
