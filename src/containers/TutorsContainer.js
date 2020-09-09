@@ -7,3 +7,5 @@ class TutorsContainer extends React.Component {
     );
   }
 }
+
+export default TutorsContainer;

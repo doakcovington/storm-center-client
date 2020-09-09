@@ -3,7 +3,8 @@ import './App.css';
 import {connect} from 'react-redux';
 
 //containers
-import EventsContainer from './containers/EventsContainer'
+import EventsContainer from './containers/EventsContainer';
+import TutorsContainer from './containers/TutorsContainer';
 
 class App extends React.Component {
 
@@ -11,6 +12,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <EventsContainer />
+        <TutorsContainer />
       </div>
     );
   }
