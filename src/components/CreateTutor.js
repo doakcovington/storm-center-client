@@ -3,6 +3,19 @@ import {connect} from 'react-redux';
 
 class CreateTutor extends React.Component {
 
+  state = {
+    name: '',
+    speciality: '',
+    phonenumber: '',
+    email: ''
+  }
+
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value //sets the state for each key in state object [are used for keys with '.' in name]
+    });
+  }
+
   render() {
     return (
       <div>
