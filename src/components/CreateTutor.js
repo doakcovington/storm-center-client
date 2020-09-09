@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {addTutor} from '../actions/addTutor';
 
 class CreateTutor extends React.Component {
 
@@ -46,4 +47,4 @@ class CreateTutor extends React.Component {
   }
 }
 
-export default connect(null)(CreateTutor);
+export default connect(null, {addTutor})(CreateTutor);
