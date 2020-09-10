@@ -11,6 +11,18 @@ export default function eventReducer(state = defaultState, action) { //default s
         ...state, 
         events: [...state.events, action.payload]
       } //adds the event to the state
+    case 'DELETE_EVENT':
+      let events = state.events.map(event => {
+        if (event.id === action.payload.id) {
+          return action.payload
+        } else {
+          return event
+        }
+      })
+      return {
+        ...state,
+        events: events
+      }
     default:
       return state
   }
