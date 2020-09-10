@@ -11,6 +11,12 @@ export default function eventReducer(state = defaultState, action) { //default s
         ...state, 
         events: [...state.events, action.payload]
       } //adds the event to the state
+    case 'DELETE_EVENT':
+      const events = state.events.filter(event => event.id !== action.event.id.toString()) //event.id is a string (look at changing this)
+      return {
+        ...state,
+        events: events
+      }
     default:
       return state
   }
