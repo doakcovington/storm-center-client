@@ -1,13 +1,8 @@
-const defaultState = {
-  tutors: []
-}
-
-export default function tutorReducer(state = defaultState, action) {
+export default function tutorReducer(state = {tutors: []}, action) {
   switch(action.type) {
     case 'GET_TUTORS':
       return {
-        ...state,
-        events: action.payload
+        tutors: action.payload
       }
     case 'ADD_TUTOR':
       return {
