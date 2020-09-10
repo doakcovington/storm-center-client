@@ -27,8 +27,8 @@ const mapStateToProps = state => { //state is from redux store
   }
 }
 
-const mapDispatchToProps = {
-  fetchEvents: fetchEvents
-}
+// const mapDispatchToProps = {
+//   fetchEvents: fetchEvents
+// }
 
-export default connect( mapStateToProps, mapDispatchToProps)(EventsContainer);
+export default connect( mapStateToProps, {fetchEvents})(EventsContainer);

@@ -27,8 +27,8 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = {
-  getTutors: getTutors
-}
+// const mapDispatchToProps = {
+//   getTutors: getTutors
+// }
  
-export default connect(mapStateToProps, mapDispatchToProps)(TutorsContainer);
+export default connect(mapStateToProps,{getTutors})(TutorsContainer);
