@@ -1,5 +1,9 @@
 export default function tutorReducer(state = {tutors: []}, action) {
   switch(action.type) {
+    case 'GET_TUTORS':
+      return {
+        tutors: action.payload
+      }
     case 'ADD_TUTOR':
       return {
         ...state,
