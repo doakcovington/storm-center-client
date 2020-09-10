@@ -49,6 +49,7 @@ class CreateEvent extends React.Component {
           <select id='tutor_id' name='tutor_id' value={this.state.tutor_id} onChange={this.handleChange}>
             <option value='1'>Doak</option>
             <option value='2'>Heidi</option>
+            <option value='3'>John</option>
           </select><br></br>
           <button type="button" onClick={this.handleSubmit}>Submit</button>
         </form>
