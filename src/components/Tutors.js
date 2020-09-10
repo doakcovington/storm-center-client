@@ -4,7 +4,7 @@ const Tutors = (props) => {
   console.log(props)
   return (
     <div>
-      Hello from Tutors component
+      {props.tutors.map(tutor => <div key={tutor.id}>{tutor.attributes.name}</div>)}
     </div>
   )
 }
