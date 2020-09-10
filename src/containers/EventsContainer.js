@@ -23,8 +23,12 @@ class EventsContainer extends React.Component {
 
 const mapStateToProps = state => { //state is from redux store
   return {
-    events: state.events
+    events: state.eventReducer.events //was state.events before adding combined reducer
   }
 }
 
-export default connect( mapStateToProps, {fetchEvents})(EventsContainer);
+const mapDispatchToProps = {
+  fetchEvents: fetchEvents
+}
+
+export default connect( mapStateToProps, mapDispatchToProps)(EventsContainer);
