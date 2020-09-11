@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import {connect} from 'react-redux';
+import NavBar from './components/NavBar';
 
 //containers
 import EventsContainer from './containers/EventsContainer';
@@ -11,6 +12,7 @@ class App extends React.Component {
   render () {
     return (
       <div className="App">
+        <NavBar />
         <EventsContainer />
         <TutorsContainer />
       </div>
