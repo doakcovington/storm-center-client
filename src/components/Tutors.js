@@ -1,4 +1,6 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {deleteTutor} from '../actions/deleteTutor'
 
 const Tutors = (props) => {
   
@@ -17,4 +19,4 @@ const Tutors = (props) => {
   )
 }
 
-export default Tutors;
+export default connect(null, {deleteTutor})(Tutors);
