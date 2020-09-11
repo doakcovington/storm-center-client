@@ -1,6 +1,6 @@
 export const deleteTutor = (tutorId) => {
   return dispatch => {
-    return fetch(`http://localhost:5000/api/v1/tutors${tutorId}`, {
+    return fetch(`http://localhost:5000/api/v1/tutors/${tutorId}`, {
       method: 'DELETE'
     })
     .then(response => response.json())
