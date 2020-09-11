@@ -15,7 +15,7 @@ class EventsContainer extends React.Component {
     return (
       <div>
         <Route path='/events/new' component={CreateEvent} />
-        <Route exact path='/events/' render={() => <Events events={this.props.events}/>}/>
+        <Route exact path={['/', '/events/']} render={() => <Events events={this.props.events}/>}/>
       </div>
     )
   }
