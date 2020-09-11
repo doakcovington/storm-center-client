@@ -9,6 +9,12 @@ export default function tutorReducer(state = {tutors: []}, action) {
         ...state,
         tutors: [...state.tutors, action.payload]
       }
+    case 'DELETE_TUTOR':
+      const tutors = state.tutors.filter(tutor => tutor.id !== action.tutor.id.toString())
+      return {
+        ...state,
+        tutors: tutors
+      }
     default:
       return state
   }
