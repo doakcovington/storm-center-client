@@ -3,7 +3,7 @@ import CreateTutor from '../components/CreateTutor';
 import Tutors from '../components/Tutors';
 import {connect} from 'react-redux';
 import {getTutors} from '../actions/getTutors';
-
+import {Route} from 'react-router-dom';
 class TutorsContainer extends React.Component {
 
   componentDidMount() {
@@ -13,9 +13,8 @@ class TutorsContainer extends React.Component {
   render() {
     return (
       <div>
-        Howdy for the Tutors Container!
-        <Tutors tutors={this.props.tutors}/>
-        <CreateTutor />
+        <Route path='/tutors/new' component={CreateTutor} />
+        <Route exact path='/tutors/' render={() => <Tutors tutors={this.props.tutors}/>}/>
       </div>
     );
   }
