@@ -6,7 +6,7 @@ import {deleteEvent} from '../actions/deleteEvent';
 const Events = (props) => {
   
   const handleDelete = (eventData) => {
-    props.deleteEvent(eventData)
+    props.deleteEvent(eventData) //event data sends the id
   }
 
   return (
