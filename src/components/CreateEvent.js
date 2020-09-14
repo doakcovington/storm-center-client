@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {addEvent} from '../actions/addEvent';
+import Button from 'react-bootstrap/Button';
 
 class CreateEvent extends React.Component {
   state = {
@@ -51,7 +52,7 @@ class CreateEvent extends React.Component {
             <option value='2'>Heidi</option>
             <option value='3'>John</option>
           </select><br></br>
-          <button type="button" onClick={this.handleSubmit}>Submit</button>
+          <Button variant="primary" onClick={this.handleSubmit}>Add Event</Button>
         </form>
       </div>
     );
