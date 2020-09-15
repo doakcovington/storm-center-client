@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {deleteEvent} from '../actions/deleteEvent';
 import Button from 'react-bootstrap/Button';
 
-const Events = (props) => {
+const Events = (props) =>  {
   
   const handleDelete = (eventData) => {
     props.deleteEvent(eventData) //event data sends the id
