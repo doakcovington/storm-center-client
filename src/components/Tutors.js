@@ -1,6 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {deleteTutor} from '../actions/deleteTutor'
+import Button from 'react-bootstrap/Button';
+import { Card, CardDeck } from 'react-bootstrap';
 
 const Tutors = (props) => {
   
@@ -9,13 +11,18 @@ const Tutors = (props) => {
   }
 
   return (
-    <div>
+    <CardDeck>
       {
         props.tutors.map(tutor => 
-          <div key={tutor.id}>{tutor.attributes.name} <button onClick={() => handleDelete(tutor.id)}>Delete</button> 
-          </div>)
+        <Card key={tutor.id}>
+          <Card.Title>{tutor.attributes.name}</Card.Title>
+            <Card.Text>{tutor.attributes.speciality}</Card.Text>
+            <Card.Text>{tutor.attributes.phonenumber}</Card.Text>
+            <Card.Text>{tutor.attributes.email}</Card.Text>
+          <p><Button variant="danger" onClick={() => handleDelete(tutor.id)}>Delete</Button> </p>
+        </Card>)
       }
-    </div>
+    </CardDeck>
   )
 }
 

@@ -1,16 +1,17 @@
 import React from 'react';
+import Card from 'react-bootstrap/Card'
 
 const Event = (props) => {
 
   return (
-    <div key={props.event.id}>
-     <h2>{props.event.attributes.name}</h2>
-     <h3>{props.event.attributes.date}</h3>
-     <p>{props.event.attributes.description}</p>
-     <p>Tutor: {props.event.attributes.tutor.name}</p>
-     <p>Location: {props.event.attributes.location}</p>
-     <p>Spaces Left: {props.event.attributes.spaces}</p>
-    </div>
+    <Card style={{ width: '18rem' }} key={props.event.id}>
+      <Card.Header as="h5">{props.event.attributes.name}</Card.Header>
+          <Card.Text>{props.event.attributes.date}</Card.Text>
+          <Card.Text>{props.event.attributes.description}</Card.Text>
+          <Card.Text>Tutor: {props.event.attributes.tutor.name}</Card.Text>
+          <Card.Link href={props.event.attributes.location}>Zoom Link</Card.Link>
+      <Card.Footer>Spaces: {props.event.attributes.spaces}</Card.Footer>
+    </Card>
   )
 }
 

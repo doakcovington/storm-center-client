@@ -9,6 +9,7 @@ import { Provider } from 'react-redux';
 import { compose, createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import {BrowserRouter as Router} from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 //reducers
 import eventReducer from './reducers/eventReducer'; //updates the value of store
