@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {addEvent} from '../actions/addEvent';
 import Button from 'react-bootstrap/Button';
+import { Redirect } from 'react-router-dom';
 
 class CreateEvent extends React.Component {
   state = {
@@ -10,7 +11,8 @@ class CreateEvent extends React.Component {
     date: '',
     location: '',
     spaces: '',
-    tutor_id: '1' //sets tutor to first in select option
+    tutor_id: '1', //sets tutor to first in select option
+    redirectToHome: false
   }
 
   handleChange = (event) => {
@@ -28,11 +30,17 @@ class CreateEvent extends React.Component {
       date: '',
       location: '',
       spaces: '',
-      tutor_id: '1' //sets tutor to first in select option
+      tutor_id: '1', //sets tutor to first in select option
+      redirectToHome: true 
     });
   }
 
   render() {
+    //redirects user to home page after submitting the form
+    const redirectToHome = this.state.redirectToHome;
+    if (redirectToHome === true) {
+      return <Redirect to="/" />
+    }
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
