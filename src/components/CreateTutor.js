@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {addTutor} from '../actions/addTutor';
+import { Redirect } from 'react-router-dom';
 
 class CreateTutor extends React.Component {
 
@@ -8,7 +9,9 @@ class CreateTutor extends React.Component {
     name: '',
     speciality: '',
     phonenumber: '',
-    email: ''
+    email: '',
+    redirectToTutors: false,
+
   }
 
   handleChange = (e) => {
@@ -25,10 +28,17 @@ class CreateTutor extends React.Component {
       speciality: '',
       phonenumber: '',
       email: '',
+      redirectToTutors: true
     });
   }
 
   render() {
+  //redirects user to home page after submitting the form
+    const redirectToTutors = this.state.redirectToTutors;
+    if (redirectToTutors === true) {
+      return <Redirect to="/tutors/" /> // Redirect navigates to a new location
+    }
+
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
