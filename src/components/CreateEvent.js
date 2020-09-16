@@ -12,6 +12,7 @@ class CreateEvent extends React.Component {
     date: '',
     location: '',
     spaces: '',
+    time: '',
     tutor_id: '1', //sets tutor to first in select option
     redirectToHome: false
   }
@@ -31,6 +32,7 @@ class CreateEvent extends React.Component {
       date: '',
       location: '',
       spaces: '',
+      time: '',
       tutor_id: '1', //sets tutor to first in select option
       redirectToHome: true 
     });
@@ -55,6 +57,10 @@ class CreateEvent extends React.Component {
         <Form.Group controlId="formGroupDate">
           <Form.Label column lg={2}>Event Date:</Form.Label>
           <input type='date' name='date' value={this.state.date} onChange={this.handleChange}/>
+        </Form.Group>
+        <Form.Group controlId="formGroupTime">
+          <Form.Label column lg={2}>Event Time:</Form.Label>
+          <input type='text' name='time' value={this.state.time} onChange={this.handleChange}/>
         </Form.Group>
         <Form.Group controlId="formGroupLocation">
           <Form.Label column lg={2}>Event Location/Link:</Form.Label>
