@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {addEvent} from '../actions/addEvent';
 import Button from 'react-bootstrap/Button';
 import { Redirect } from 'react-router-dom';
+import Form from 'react-bootstrap/Form';
 
 class CreateEvent extends React.Component {
   state = {
@@ -42,27 +43,37 @@ class CreateEvent extends React.Component {
       return <Redirect to="/" />
     }
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>Event Name:</label>
-          <input type='text' placeholder='Name' value={this.state.name} name='name' onChange={this.handleChange}/><br></br>
-          <label>Event Description:</label>
-          <input type='text' placeholder='Description' value={this.state.description} name='description' onChange={this.handleChange}/><br></br>
-          <label>Event Date:</label>
-          <input type='date' name='date' value={this.state.date} onChange={this.handleChange}/><br></br>
-          <label>Event Location/Link:</label>
-          <input type='text' placeholder='url...' value={this.state.location} name='location' onChange={this.handleChange}/><br></br>
-          <label>Event Spaces:</label>
-          <input type='number' placeholder='5' value={this.state.number} name='spaces' onChange={this.handleChange}/><br></br>
-          <label>Event Tutor:</label>
-          <select id='tutor_id' name='tutor_id' value={this.state.tutor_id} onChange={this.handleChange}>
-            <option value='1'>Doak</option>
-            <option value='2'>Heidi</option>
-            <option value='3'>John</option>
-          </select><br></br>
+        <Form onSubmit={this.handleSubmit}>
+        <Form.Group controlId="formGroupEventName">
+          <Form.Label column lg={2}>Event Name:</Form.Label>
+          <input type='text' placeholder='Name' value={this.state.name} name='name' onChange={this.handleChange}/>
+        </Form.Group>
+        <Form.Group controlId="formGroupDescription">
+          <Form.Label column lg={2}>Event Description:</Form.Label>
+          <input type='text' placeholder='Description' value={this.state.description} name='description' onChange={this.handleChange}/>
+        </Form.Group>
+        <Form.Group controlId="formGroupDate">
+          <Form.Label column lg={2}>Event Date:</Form.Label>
+          <input type='date' name='date' value={this.state.date} onChange={this.handleChange}/>
+        </Form.Group>
+        <Form.Group controlId="formGroupLocation">
+          <Form.Label column lg={2}>Event Location/Link:</Form.Label>
+          <input type='text' placeholder='url...' value={this.state.location} name='location' onChange={this.handleChange}/>
+        </Form.Group>
+        <Form.Group controlId="formGroupSpaces">
+          <Form.Label column lg={2}>Event Spaces:</Form.Label>
+          <input type='number' placeholder='5' value={this.state.number} name='spaces' onChange={this.handleChange}/>
+        </Form.Group>
+        <Form.Group controlId="formGroupTutor">
+          <Form.Label column lg={2}>Event Tutor:</Form.Label>
+            <select id='tutor_id' name='tutor_id' value={this.state.tutor_id} onChange={this.handleChange}>
+              <option value='1'>Doak</option>
+              <option value='2'>Heidi</option>
+              <option value='3'>John</option>
+            </select>
+        </Form.Group>
           <Button variant="primary" onClick={this.handleSubmit}>Add Event</Button>
-        </form>
-      </div>
+        </Form>
     );
   }
 }
