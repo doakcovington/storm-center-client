@@ -1,8 +1,13 @@
 import React from 'react';
+import Jumbotron from 'react-bootstrap/Jumbotron'
 
 const Home = () => {
   return (
-    <h2>Welcome to the Storm Center</h2>
+    <Jumbotron>
+      <h1>Welcome to the Storm Center</h1>
+      <p>Storm Center is a collaboration of our student services team</p>
+      <p>Join us for tutoring events & study groups!</p>
+    </Jumbotron>
   )
 }
 
