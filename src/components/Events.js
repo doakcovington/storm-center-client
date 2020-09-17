@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {deleteEvent} from '../actions/deleteEvent';
 import Button from 'react-bootstrap/Button';
 import { CardDeck } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
 
 const Events = (props) =>  {
   
@@ -12,16 +13,16 @@ const Events = (props) =>  {
   }
 
   return (
-    <div>
+    <Container>
       <h2>Upcoming Events:</h2>
-      <CardDeck>
+      <CardDeck className='ml-50'>
     {
-      props.events.map(event => <iv key={event.id}><Event event={event}/>
+      props.events.map(event => <div key={event.id}><Event event={event}/>
       <Button variant="danger"  onClick={() => handleDelete(event.id)}>Delete</Button>
-      </iv>)
+      </div>)
      }
     </CardDeck>
-    </div>
+    </Container>
   )
 }
 
