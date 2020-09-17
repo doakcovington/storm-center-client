@@ -12,13 +12,16 @@ const Events = (props) =>  {
   }
 
   return (
-    <CardDeck>
+    <div>
+      <h2>Upcoming Events:</h2>
+      <CardDeck>
     {
-      props.events.map(event => <div key={event.id}><Event event={event}/>
+      props.events.map(event => <iv key={event.id}><Event event={event}/>
       <Button variant="danger"  onClick={() => handleDelete(event.id)}>Delete</Button>
-      </div>)
+      </iv>)
      }
     </CardDeck>
+    </div>
   )
 }
 
