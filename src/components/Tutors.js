@@ -19,7 +19,7 @@ const Tutors = (props) => {
             <Card.Text>{tutor.attributes.speciality}</Card.Text>
             <Card.Text>{tutor.attributes.phonenumber}</Card.Text>
             <Card.Text>{tutor.attributes.email}</Card.Text>
-          <p><Button variant="danger" onClick={() => handleDelete(tutor.id)}>Delete</Button> </p>
+          <Button variant="danger" onClick={() => handleDelete(tutor.id)}>Delete</Button>
         </Card>)
       }
     </CardDeck>
