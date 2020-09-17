@@ -44,7 +44,7 @@ class CreateEvent extends React.Component {
     //redirects user to home page after submitting the form
     const redirectToHome = this.state.redirectToHome;
     if (redirectToHome === true) {
-      return <Redirect to="/" />
+      return <Redirect to="/events/" />
     }
     return (
         <Form onSubmit={this.handleSubmit}>
