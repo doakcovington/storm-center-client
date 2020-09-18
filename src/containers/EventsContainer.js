@@ -8,13 +8,14 @@ import {fetchEvents} from '../actions/fetchEvents';
 class EventsContainer extends React.Component {
 
   componentDidMount() {
-    this.props.fetchEvents()
+    this.props.fetchEvents();
+
   }
 
   render() {
     return (
       <div>
-        <Route path='/events/new' component={CreateEvent} />
+        <Route path='/events/new' render={() => <CreateEvent tutors={this.props.tutors}/>}/>
         <Route exact path={['/', '/events/']} render={() => <Events events={this.props.events}/>}/>
       </div>
     )
@@ -23,12 +24,13 @@ class EventsContainer extends React.Component {
 
 const mapStateToProps = state => { //state is from redux store
   return {
-    events: state.eventReducer.events //was state.events before adding combined reducer
+    events: state.eventReducer.events, //was state.events before adding combined reducer
+    tutors: state.tutorReducer.tutors 
   }
 }
 
-// const mapDispatchToProps = {
-//   fetchEvents: fetchEvents
-// }
+const mapDispatchToProps = {
+  fetchEvents: fetchEvents,
+}
 
-export default connect( mapStateToProps, {fetchEvents})(EventsContainer);
+export default connect( mapStateToProps, mapDispatchToProps)(EventsContainer);
