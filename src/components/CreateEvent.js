@@ -15,7 +15,7 @@ class CreateEvent extends React.Component {
     time: '',
     icon_url: '',
     tutor_id: '1', //sets tutor to first in select option
-    redirectToHome: false
+    redirectToHome: false,
   }
 
   handleChange = (event) => {
@@ -41,6 +41,10 @@ class CreateEvent extends React.Component {
   }
 
   render() {
+    //Adds tutor as an option for tutor select in form
+    const options = this.props.tutors.map(tutor => {
+      return <option key={tutor.id} value={tutor.id}>{tutor.attributes.name}</option>
+    });
     //redirects user to home page after submitting the form
     const redirectToHome = this.state.redirectToHome;
     if (redirectToHome === true) {
@@ -79,9 +83,7 @@ class CreateEvent extends React.Component {
         <Form.Group controlId="formGroupTutor">
           <Form.Label column lg={2}>Event Tutor:</Form.Label>
             <select id='tutor_id' name='tutor_id' value={this.state.tutor_id} onChange={this.handleChange}>
-              <option value='1'>Doak</option>
-              <option value='2'>Heidi</option>
-              <option value='3'>John</option>
+             {options}
             </select>
         </Form.Group>
           <Button variant="primary" onClick={this.handleSubmit}>Add Event</Button>
