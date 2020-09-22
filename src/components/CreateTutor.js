@@ -12,8 +12,8 @@ class CreateTutor extends React.Component {
     speciality: '',
     phonenumber: '',
     email: '',
+    admin_id: '1',
     redirectToTutors: false,
-
   }
 
   handleChange = (e) => {
@@ -30,7 +30,8 @@ class CreateTutor extends React.Component {
       speciality: '',
       phonenumber: '',
       email: '',
-      redirectToTutors: true
+      admin_id: '1', //has to be set before redirectToTutors 
+      redirectToTutors: true,
     });
   }
 
@@ -59,6 +60,12 @@ class CreateTutor extends React.Component {
             <Form.Label column lg={2}>Email: </Form.Label>
             <input type='text' placeholder='tutor@email.com' value={this.state.email} name='email' onChange={this.handleChange}/>
           </Form.Group>
+          <Form.Group>
+            <Form.Label column lg={2}>Created By:</Form.Label>
+              <select id='admin_id' value={this.state.admin_id} name='admin_id' onChange={this.handleChange}>
+                <option value='1'>Heidi</option>
+              </select>
+        </Form.Group>
           <Button type="button" onClick={this.handleSubmit}>Submit</Button>
         </Form>
     )
