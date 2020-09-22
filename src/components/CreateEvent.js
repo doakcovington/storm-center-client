@@ -14,7 +14,8 @@ class CreateEvent extends React.Component {
     spaces: '',
     time: '',
     icon_url: '',
-    tutor_id: '1', //sets tutor to first in select option
+    tutor_id: '1', //sets tutor to first in select option,
+    admin_id: '1',
     redirectToHome: false,
   }
 
@@ -36,6 +37,7 @@ class CreateEvent extends React.Component {
       time: '',
       icon_url: '',
       tutor_id: '1', //sets tutor to first in select option
+      admin_id: '1',
       redirectToHome: true 
     });
   }
@@ -85,6 +87,12 @@ class CreateEvent extends React.Component {
             <select id='tutor_id' name='tutor_id' value={this.state.tutor_id} onChange={this.handleChange}>
              {options}
             </select>
+        </Form.Group>
+        <Form.Group>
+            <Form.Label column lg={2}>Created By:</Form.Label>
+              <select id='admin_id' value={this.state.admin_id} name='admin_id' onChange={this.handleChange}>
+                <option value='1'>Heidi</option>
+              </select>
         </Form.Group>
           <Button variant="primary" onClick={this.handleSubmit}>Add Event</Button>
         </Form>
