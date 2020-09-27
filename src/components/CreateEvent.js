@@ -19,6 +19,7 @@ class CreateEvent extends React.Component {
     redirectToHome: false,
   }
 
+  //updates state after every form keystroke 
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value //sets the state for each key in state object [are used for keys with '.' in name]

@@ -15,6 +15,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import eventReducer from './reducers/eventReducer'; //updates the value of store
 import tutorReducer from './reducers/tutorReducer';
 
+//Calls every child reducer and stores into a single state object
 const reducer = combineReducers({
   eventReducer,
   tutorReducer
@@ -22,11 +23,11 @@ const reducer = combineReducers({
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
+//contains application state
 const store = createStore(reducer, composeEnhancer(applyMiddleware(thunk)))
 
-
-
 ReactDOM.render(
+  //store is available to all nested component that has been wrapped in connect()
   <Provider store={store}>
     <Router>
       <App />

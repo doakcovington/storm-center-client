@@ -16,6 +16,8 @@ class CreateTutor extends React.Component {
     redirectToTutors: false,
   }
 
+
+  //updates state after every form keystroke 
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value //sets the state for each key in state object [are used for keys with '.' in name]
