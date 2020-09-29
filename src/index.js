@@ -14,13 +14,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //reducers
 import eventReducer from './reducers/eventReducer'; //updates the value of store
 import tutorReducer from './reducers/tutorReducer';
-import admindReducer from './reducers/adminReducer';
+import adminReducer from './reducers/adminReducer';
 
 //Calls every child reducer and stores into a single state object
 const reducer = combineReducers({
   eventReducer,
   tutorReducer,
-  admindReducer
+  adminReducer
 })
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
