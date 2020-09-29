@@ -1,6 +1,5 @@
 import React from 'react';
 import Event from './Event';
-import Waitlist from './Waitlist';
 import { CardDeck } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 
@@ -12,7 +11,6 @@ const Events = (props) =>  {
       <CardDeck className='ml-50'>
     {
       props.events.map(event => <div key={event.id}><Event event={event}/>
-      <Waitlist />
       </div>)
      }
     </CardDeck>
