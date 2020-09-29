@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import NavBar from './components/NavBar';
 
 //containers
-import HomeContainer from './containers/HomeContainer';
+import Home from './components/Home';
 
 class App extends React.Component {
 
@@ -12,7 +12,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <NavBar />
-        <HomeContainer />
+        <Home />
       </div>
     );
   }
