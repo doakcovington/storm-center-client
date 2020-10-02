@@ -12,7 +12,7 @@ class CreateTutor extends React.Component {
     speciality: '',
     phonenumber: '',
     email: '',
-    admin_id: '1',
+    adminId: '1',
     redirectToTutors: false,
   }
 
@@ -32,7 +32,7 @@ class CreateTutor extends React.Component {
       speciality: '',
       phonenumber: '',
       email: '',
-      admin_id: '1', //has to be set before redirectToTutors 
+      adminId: '1', //has to be set before redirectToTutors 
       redirectToTutors: true,
     });
   }
@@ -64,7 +64,7 @@ class CreateTutor extends React.Component {
           </Form.Group>
           <Form.Group>
             <Form.Label column lg={2}>Created By:</Form.Label>
-              <select id='admin_id' value={this.state.admin_id} name='admin_id' onChange={this.handleChange}>
+              <select id='adminId' value={this.state.adminId} name='adminId' onChange={this.handleChange}>
                 <option value='1'>Heidi</option>
               </select>
         </Form.Group>
