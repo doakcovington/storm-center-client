@@ -25,9 +25,5 @@ const mapStateToProps = state => {
     tutors: state.tutorReducer.tutors
   }
 }
-
-// const mapDispatchToProps = {
-//   getTutors: getTutors
-// }
  
 export default connect(mapStateToProps,{getTutors})(TutorsContainer);

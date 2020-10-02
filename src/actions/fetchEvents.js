@@ -1,4 +1,4 @@
-export function fetchEvents() { //creates action object contained events from rails api
+export function fetchEvents() {
   return (dispatch) => {
     fetch('http://localhost:5000/api/v1/events')
     .then(response => response.json())

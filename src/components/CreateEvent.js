@@ -15,11 +15,10 @@ class CreateEvent extends React.Component {
     time: '',
     icon_url: '',
     tutor_id: '1', //sets tutor to first in select option,
-    admin_id: '1',
+    admin_id: '1', 
     redirectToHome: false,
   }
 
-  //updates state after every form keystroke 
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value //sets the state for each key in state object [are used for keys with '.' in name]
@@ -29,7 +28,7 @@ class CreateEvent extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.addEvent(this.state);
-    this.setState({ //clears form input fields after submit
+    this.setState({ 
       name: '',
       description: '',
       date: '',
@@ -48,7 +47,8 @@ class CreateEvent extends React.Component {
     const options = this.props.tutors.map(tutor => {
       return <option key={tutor.id} value={tutor.id}>{tutor.attributes.name}</option>
     });
-    //redirects user to home page after submitting the form
+
+    //redirects user to events page after submitting the form
     const redirectToHome = this.state.redirectToHome;
     if (redirectToHome === true) {
       return <Redirect to="/events/" />

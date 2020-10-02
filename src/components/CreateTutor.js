@@ -16,8 +16,6 @@ class CreateTutor extends React.Component {
     redirectToTutors: false,
   }
 
-
-  //updates state after every form keystroke 
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value //sets the state for each key in state object [are used for keys with '.' in name]
@@ -27,7 +25,7 @@ class CreateTutor extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.addTutor(this.state);
-    this.setState({ //clears form input fields after submit
+    this.setState({
       name: '',
       speciality: '',
       phonenumber: '',
@@ -38,7 +36,7 @@ class CreateTutor extends React.Component {
   }
 
   render() {
-  //redirects user to home page after submitting the form
+  //redirects user to tutor page after submitting the form
     const redirectToTutors = this.state.redirectToTutors;
     if (redirectToTutors === true) {
       return <Redirect to="/tutors/" /> // Redirect navigates to a new location

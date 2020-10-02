@@ -19,4 +19,4 @@ class App extends React.Component {
 }
 
 //connect() connects component to redux store
-export default connect()(App); //connect allows access to store in index 
+export default connect()(App);

@@ -22,15 +22,14 @@ class EventsContainer extends React.Component {
   }
 }
 
-//returns object of data 
-const mapStateToProps = state => { //state is the entire Redux store state 
+
+const mapStateToProps = state => {
   return {
-    events: state.eventReducer.events, //was state.events before adding combined reducer
+    events: state.eventReducer.events,
     tutors: state.tutorReducer.tutors 
   }
 }
 
-//used for dispatching actions to the store
 const mapDispatchToProps = {
   fetchEvents: fetchEvents,
 }
