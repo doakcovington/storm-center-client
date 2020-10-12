@@ -1,19 +1,9 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import { format } from 'date-fns';
-import Button from 'react-bootstrap/Button';
 import {connect} from 'react-redux';
 
 class Event extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {rsvpStatus: "Have Not RSVP'D"}
-  }
-
-  changeRsvpStatus = () => {
-    const newRsvpStatus = this.state.rsvpStatus = "Have RSVP'D";
-    this.setState({rsvpStatus: newRsvpStatus})
-  }
 
   tutorCard = () => {
     return this.props.event.attributes.tutor ? <Card.Text>Tutor: {this.props.event.attributes.tutor.name}</Card.Text> : <Card.Text>No Tutor Assigned to This Event</Card.Text>
@@ -22,7 +12,6 @@ class Event extends React.Component {
   render() {
     return (
       <div>
-        <Button onClick={this.changeRsvpStatus}>RSVP</Button>
         <Card style={{ width: '18rem' }} key={this.props.event.id}>
          <Card.Header as="h5">{this.props.event.attributes.name}</Card.Header>
             <Card.Text>{format(new Date(this.props.event.attributes.date), 'MM/dd/yyyy')} at {this.props.event.attributes.time}</Card.Text>
@@ -31,7 +20,6 @@ class Event extends React.Component {
              {this.tutorCard}
              <Card.Link href={this.props.event.attributes.location}>Zoom Link</Card.Link>
           <Card.Text>Spaces: {this.props.event.attributes.spaces}</Card.Text>
-         <Card.Footer> Status: {this.state.rsvpStatus}</Card.Footer>
      </Card>
       </div>
     )
