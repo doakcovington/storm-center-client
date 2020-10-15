@@ -9,6 +9,17 @@ class Login extends React.Component {
     password: "",
   }
 
+  handleOnChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value //sets the state for each key in state object [are used for keys with '.' in name]
+    });
+  }
+
+  onSubmit = (e) => {
+    e.preventDefault();
+    this.props.fetchAdmin(this.state);
+  }
+
   render() {
     return(
       <div>
@@ -21,7 +32,12 @@ class Login extends React.Component {
       </div>
     )
   }
-
 }
 
-export default connect(null,)(Login);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchAdmin: (adminInfo) => dispatch(fetchAdmin(adminInfo)),
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Login);
