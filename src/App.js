@@ -3,7 +3,7 @@ import './App.css';
 import {connect} from 'react-redux';
 import NavBar from './components/NavBar';
 import Login from './components/Login';
-import logAdminOut from './actions/adminActions';
+import {logAdminOut} from './actions/adminActions';
 
 //containers
 import Home from './components/Home';
@@ -11,7 +11,7 @@ import Home from './components/Home';
 class App extends React.Component {
 
   handleOnClick = () => {
-    if (this.props.loggedIn) {
+    if (this.props.adminReducer.loggedIn) {
       this.props.logAdminOut();
     }
   }
@@ -19,7 +19,7 @@ class App extends React.Component {
   render () {
     return (
       <div className="App">
-        {!this.props.adminReducer.loggedIn ? <Login /> : <button>Logout</button>}
+        {!this.props.adminReducer.loggedIn ? <Login /> : <button onClick={() => this.handleOnClick()}>Logout</button>}
         <NavBar />
         <Home />
       </div>
@@ -34,4 +34,4 @@ const mapStateToProps = (state) => {
 }
 
 //connect() connects component to redux store
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, { logAdminOut })(App);
