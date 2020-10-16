@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import {connect} from 'react-redux';
 import NavBar from './components/NavBar';
+import Login from './components/Login';
 
 //containers
 import Home from './components/Home';
@@ -11,6 +12,7 @@ class App extends React.Component {
   render () {
     return (
       <div className="App">
+        <Login />
         <NavBar />
         <Home />
       </div>
