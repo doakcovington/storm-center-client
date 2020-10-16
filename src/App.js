@@ -13,6 +13,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Login />
+        {!this.props.adminReducer.loggedIn ? <h1>Please Login!</h1> : <h1>Welcome</h1>}
         <NavBar />
         <Home />
       </div>
@@ -20,5 +21,11 @@ class App extends React.Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    adminReducer: state.adminReducer
+  }
+}
+
 //connect() connects component to redux store
-export default connect()(App);
+export default connect(mapStateToProps)(App);
