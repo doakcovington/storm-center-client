@@ -3,7 +3,7 @@ const setAdmin = (payload) => ({ type: "SET_ADMIN", payload})
 export const logAdminOut = () => ({type: "LOG_OUT"})
 
 export const fetchAdmin = (adminInfo) => dispatch => {
-  fetch(`http://localhost:5000/login`, {
+  fetch(`http://localhost:5000/api/v1/login`, {
     method: "POST",
     headers: {
       "Content-Type": "applications/json",
