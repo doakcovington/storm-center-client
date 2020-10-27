@@ -19,9 +19,8 @@ class App extends React.Component {
   render () {
     return (
       <div className="App">
-        {!this.props.adminReducer.loggedIn ? <Login /> : <button onClick={() => this.handleOnClick()}>Logout</button>}
+        {!this.props.adminReducer.loggedIn ? <Login /> :  <Home />}
         <NavBar />
-        <Home />
       </div>
     );
   }
