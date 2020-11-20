@@ -1,43 +1,60 @@
-import React from 'react';
-import {connect} from 'react-redux';
-import {fetchAdmin} from '../actions/adminActions';
+import React from 'react'
+import {connect} from 'react-redux'
+import {fetchUser} from '../actions/userActions'
 
-class Login extends React.Component {
-
+class LoginComponent extends React.Component {
   state = {
     email: "",
-    password: "",
+    password: ""
   }
 
-  handleOnChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value //sets the state for each key in state object [are used for keys with '.' in name]
-    });
-  }
+    handleOnChange = (e) => {
+        e.persist();
+        this.setState(() => ({
+            [e.target.name]: e.target.value 
+        }))
+    }
 
-  onSubmit = (e) => {
-    e.preventDefault();
-    this.props.fetchAdmin(this.state);
-  }
+    onSubmit = (e) => {
+        e.preventDefault()
+        this.props.fetchUser(this.state)
+    }
 
-  render() {
-    return(
-      <div>
-        <h2>Login:</h2>
-        <form onSubmit={this.onSubmit}>
-          <input type="text" name="email" placeholder="email" value={this.state.email} onChange={this.handleOnChange}></input>
-          <input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.handleOnChange}></input>
-          <input type="submit" value="login"></input>
-        </form>
-      </div>
-    )
-  }
+    render(){
+        return(
+            <div>
+                <h1>Login Form</h1>
+                <form onSubmit={this.onSubmit}>
+                    <input 
+                        type="text" 
+                        name="email" 
+                        placeholder="Email" 
+                        value={this.state.email}
+                        onChange={this.handleOnChange}
+                    />
+                    <br/>
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                        value={this.state.password}
+                        onChange={this.handleOnChange}
+                    />
+                    <br/>
+                    <input
+                        type="submit"
+                        value="Login"
+                    />
+                </form>
+            </div>
+        )
+    }
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchAdmin: (adminInfo) => dispatch(fetchAdmin(adminInfo)),
-  }
+    return {
+        fetchUser: (userInfo) => dispatch(fetchUser(userInfo))
+    }
 }
 
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(null, mapDispatchToProps)(LoginComponent)
