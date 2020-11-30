@@ -14,14 +14,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //reducers
 import eventReducer from './reducers/eventReducer';
 import tutorReducer from './reducers/tutorReducer';
-import adminReducer from './reducers/adminReducer';
 import userReducer from './reducers/userReducer';
 
 //Calls every child reducer and stores into a single state object
 const reducer = combineReducers({
   eventReducer,
   tutorReducer,
-  adminReducer,
   userReducer
 })
 
